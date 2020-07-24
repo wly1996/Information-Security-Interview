@@ -1,0 +1,29 @@
+{
+  "name": "information-security-interview",
+  "version": "1.0.0",
+  "description": "信息安全面经",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "gitbook serve ./docs ./gh-pages && npm run favicon",
+    "build": "gitbook build ./docs ./gh-pages && npm run favicon",
+    "deploy": "node ./scripts/deploy-gh-pages.js",
+    "publish": "npm run build && npm run deploy",
+    "favicon": "rm -rf ./gh-pages/gitbook/images/favicon.ico && cp ./docs/favicon.ico ./gh-pages/gitbook/images/favicon.ico",
+    "port": "lsof -i :35729"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wly1996/Information-Security-Interview.git"
+  },
+  "author": "Xinghe Wang",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/wly1996/Information-Security-Interview/issues"
+  },
+  "homepage": "https://github.com/wly1996/Information-Security-Interview#readme",
+  "dependencies": {
+    "gh-pages": "^3.1.0"
+    "gitbook-plugin-todo": "^0.1.3"
+  }
+}
